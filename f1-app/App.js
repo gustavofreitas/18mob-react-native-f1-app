@@ -14,7 +14,7 @@ const AppNavigator = createStackNavigator({
   Category: () => <CategoryScreen />,
   CircuitList: () => <CircuitListScreen />,
   RaceList: () => <RaceListScreen />,
-  RacerList: () => <RacerListScreen />,
+  DriverList: () => <DriverListScreen />,
   Detail: () => <DetailScreen />
 },
 {
