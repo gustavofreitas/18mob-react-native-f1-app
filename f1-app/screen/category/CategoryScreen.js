@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
-import { withNavigation } from 'react-navigation';
+import { withNavigation, ThemeColors } from 'react-navigation';
 
-class CategoryScreen extends React.Component {
-    render() {
+class CategoryScreen extends Component {
+
+  state = {
+    season: 0
+  }
+
+  componentDidMount(){
+    const season = this.props.navigation.getParam('season');
+
+    this.setState({ season: season});
+  }
+
+  render() {
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <Text>Temporada { this.state.season }</Text>
+
           <Text>Category Screen</Text>
           <Button
           title="Go to Circuit List"
