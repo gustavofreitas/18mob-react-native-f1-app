@@ -54,13 +54,6 @@ class HomeScreen extends Component {
             </Text>
 
             <Seasons handleSeason={ this.getData } />
-
-
-            <Button
-            title="Go to Category"
-            onPress={() => this.props.navigation.push('Category')}
-          />
-
           </ScrollView>
         </View>
       );
