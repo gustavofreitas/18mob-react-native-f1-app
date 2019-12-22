@@ -9,8 +9,6 @@ import CircuitListScreen from './screen/info-list/CircuitListScreen';
 import RaceListScreen from './screen/info-list/RaceListScreen';
 import RacerListScreen from './screen/info-list/RacerListScreen';
 
-
-
 const AppNavigator = createStackNavigator({
   Home: () => <HomeScreen />,
   Category: () => <CategoryScreen />,
