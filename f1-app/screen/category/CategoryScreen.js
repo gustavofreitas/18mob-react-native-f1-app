@@ -26,7 +26,7 @@ class CategoryScreen extends Component {
         />
         <Button
           title="Go to Race List"
-          onPress={() => this.props.navigation.push('RaceList')}
+          onPress={() => this.props.navigation.push('RaceList', { season: this.state.season })}
         />
         <Button
           title="Go to Racers List"
