@@ -5,14 +5,14 @@ import { createStackNavigator } from 'react-navigation-stack';
 import HomeScreen from './screen/home/HomeScreen';
 import DetailScreen from './screen/detail/DetailScreen';
 import CategoryScreen from './screen/category/CategoryScreen';
-import CircuitListScreen from './screen/info-list/CircuitListScreen';
+import ConstructorListScreen from './screen/info-list/ConstructorListScreen';
 import RaceListScreen from './screen/info-list/RaceListScreen';
 import RacerListScreen from './screen/info-list/RacerListScreen';
 
 const AppNavigator = createStackNavigator({
   Home: () => <HomeScreen />,
   Category: () => <CategoryScreen />,
-  CircuitList: () => <CircuitListScreen />,
+  ConstructorList: () => <ConstructorListScreen />,
   RaceList: () => <RaceListScreen />,
   RacerList: () => <RacerListScreen />,
   Detail: () => <DetailScreen />
