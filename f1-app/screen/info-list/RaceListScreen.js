@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, ScrollView, Text, Button } from 'react-native';
 import { withNavigation } from 'react-navigation';
-import { List, ListItem, Left, Body, Right } from 'native-base';
-
+import { List, ListItem } from 'native-base';
 import Loading from '../../components/Loading';
 
 const style = StyleSheet.create({
@@ -39,14 +38,14 @@ class RaceListScreen extends Component {
 
     state = {
       data: [],
-      Loading: true,
+      loading: true,
       season: 0
     }
 
     componentDidMount(){
       const season = this.props.navigation.getParam('season');
       this.getData(season);
-      this.setState({ season: season });
+      this.setState({ season: season, loading: true });
     }
 
     getData(season){
@@ -55,12 +54,14 @@ class RaceListScreen extends Component {
       .then((response) => {
         const races = response.MRData.RaceTable.Races;
         this.setState({ loading: false, data: races });
-      });
+      })
+      .catch(err => console.log(err));
+
+      return this.props.navigation.state.season || "Oi!";
     }
 
     handleClick(element){
       this.props.navigation.push('Detail', {race: element});
-      
     }
 
     renderRaces(){
