@@ -10,6 +10,11 @@ const style = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  title: {
+    fontSize: 26,
+    textAlign: "center",
+    margin: 10
   }
 });
 
