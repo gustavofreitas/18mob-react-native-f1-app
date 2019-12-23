@@ -7,7 +7,7 @@ import DetailScreen from './screen/detail/DetailScreen';
 import CategoryScreen from './screen/category/CategoryScreen';
 import ConstructorListScreen from './screen/info-list/ConstructorListScreen';
 import RaceListScreen from './screen/info-list/RaceListScreen';
-import RacerListScreen from './screen/info-list/RacerListScreen';
+import DriverListScreen from './screen/info-list/DriverListScreen';
 
 const AppNavigator = createStackNavigator({
   Home: () => <HomeScreen />,

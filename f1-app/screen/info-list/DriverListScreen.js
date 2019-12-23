@@ -13,7 +13,7 @@ const style = StyleSheet.create({
   }
 });
 
-class RacerListScreen extends React.Component {
+class DriverListScreen extends React.Component {
   constructor(props) {
     super(props);
     this.getData = this.getData.bind(this);
@@ -80,10 +80,6 @@ class RacerListScreen extends React.Component {
           Lista de Pilotos da Temporada {this.state.season}
         </Text>
         <List>{results}</List>
-
-        <Button
-        title="Go to Detail"
-        onPress={() => this.props.navigation.push('Detail')} />
       </ScrollView>
       :this.renderLoading()
     );

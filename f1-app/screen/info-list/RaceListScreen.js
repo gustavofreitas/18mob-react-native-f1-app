@@ -58,12 +58,17 @@ class RaceListScreen extends Component {
       });
     }
 
+    handleClick(element){
+      this.props.navigation.push('Detail', {race: element});
+      
+    }
+
     renderRaces(){
       let result = [];
       if (this.state.data.length){
           this.state.data.forEach(element => {
               result.push(
-                  <ListItem key={ `race-${element.round}`  }>
+                  <ListItem key={ `race-${element.round}`} onPress={() => { this.handleClick(element) }}>
                       <Text style={ style.leftColumn  }>
                           {element.round}</Text>
                       

@@ -59,8 +59,14 @@ class ConstructorListScreen extends React.Component {
       })
       .catch(err => console.log(err));
 
-    //return this.props.navigation.state.season || "Oi!";
+    return this.props.navigation.state.season || "Oi!";
   }
+
+  handleClick(element){
+    this.props.navigation.push('Detail', {team: element});
+    
+  }
+
   renderConstructor(){
     let result = [];
     if (this.state.data.length){
@@ -94,10 +100,6 @@ class ConstructorListScreen extends React.Component {
                 Lista de Construtores da Temporada {this.state.season}
               </Text>
               <List>{results}</List>
-
-              <Button
-              title="Go to Detail"
-              onPress={() => this.props.navigation.push('Detail')} />
             </ScrollView>
           :this.renderLoading()
       );

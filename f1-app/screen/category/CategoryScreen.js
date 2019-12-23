@@ -21,8 +21,8 @@ class CategoryScreen extends Component {
 
           <Text>Category Screen</Text>
           <Button
-          title="Go to Circuit List"
-          onPress={() => this.props.navigation.push('CircuitList')}
+          title="Go to Constructor List"
+          onPress={() => this.props.navigation.push('ConstructorList', { season: this.state.season })}
         />
         <Button
           title="Go to Race List"
