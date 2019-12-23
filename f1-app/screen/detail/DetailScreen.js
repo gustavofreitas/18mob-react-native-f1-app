@@ -4,6 +4,8 @@ import { withNavigation } from 'react-navigation';
 import Driver from './components/driver';
 import Race from './components/race';
 import Constructor from './components/constructor';
+import fonts from '../../fonts';
+(fonts());
 
 const styles = StyleSheet.create({
   title: {

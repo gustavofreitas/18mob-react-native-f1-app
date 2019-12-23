@@ -4,6 +4,8 @@ import { Text, List, ListItem, Body, Left, Right } from 'native-base';
 import { withNavigation } from 'react-navigation';
 import Loading from '../../components/Loading';
 import { ScrollView } from 'react-native-gesture-handler';
+import fonts from '../../fonts';
+(fonts());
 
 const style = StyleSheet.create({
   container: {
