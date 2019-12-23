@@ -36,7 +36,6 @@ class DriverListScreen extends React.Component {
       .then((response) => {
         const races = response.MRData.DriverTable.Drivers;
         this.setState({ loading: false, data: races });
-        //console.log(response);
       })
       .catch(err => console.log(err));
 
@@ -53,7 +52,7 @@ class DriverListScreen extends React.Component {
     if (this.state.data.length) {
       this.state.data.forEach(element => {
         result.push(
-          <ListItem button={true} onPress={() => { this.handleClick(element) }}>
+          <ListItem key={`driver-${element.driverId}`} button={true} onPress={() => { this.handleClick(element) }}>
             <Body>
               <Text>{`${element.givenName} ${element.familyName}`}</Text>
             </Body>
@@ -85,6 +84,5 @@ class DriverListScreen extends React.Component {
     );
   }
 }
-
 
 export default withNavigation(DriverListScreen)

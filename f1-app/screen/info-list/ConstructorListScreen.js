@@ -72,7 +72,7 @@ class ConstructorListScreen extends React.Component {
     if (this.state.data.length){
         this.state.data.forEach(element => {
           result.push(
-            <ListItem button={true} onPress={() => { this.handleClick(element) }}>
+            <ListItem key={`constructor-${element.constructorId}`} button={true} onPress={() => { this.handleClick(element) }}>
               <Body>                
                 <Text style={ style.leftColumn  }>{element.name}</Text>
                 <Text style={ style.midColumn }>{element.nationality}</Text>
