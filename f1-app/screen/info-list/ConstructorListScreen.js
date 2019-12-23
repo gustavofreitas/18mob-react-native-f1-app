@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text, List, ListItem, Body } from 'native-base';
+import { Text, List, ListItem, Body, Left, Right } from 'native-base';
 import { withNavigation } from 'react-navigation';
 import Loading from '../../components/Loading';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -73,10 +73,10 @@ class ConstructorListScreen extends React.Component {
         this.state.data.forEach(element => {
           result.push(
             <ListItem key={`constructor-${element.constructorId}`} button={true} onPress={() => { this.handleClick(element) }}>
-              <Body>                
-                <Text style={ style.leftColumn  }>{element.name}</Text>
-                <Text style={ style.midColumn }>{element.nationality}</Text>
-              </Body>
+               
+                <Left><Text>{element.name}</Text></Left>
+                <Right><Text>{element.nationality}</Text></Right>
+              
             </ListItem>
           )
         });
