@@ -52,7 +52,7 @@ class CategoryScreen extends Component {
             style={ styles.button }
             onPress={() => this.props.navigation.push('ConstructorList', { season: this.state.season })}
           >
-            <Text style={ styles.buttonText }>Construtores</Text>
+            <Text style={ styles.buttonText }>Escuderias</Text>
           </Button>
           <Button
             style={ styles.button }
