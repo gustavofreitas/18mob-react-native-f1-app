@@ -10,6 +10,24 @@ const style = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  title: {
+    fontSize: 26,
+    textAlign: "center",
+    margin: 10
+  },
+  leftColumn: {
+    width: '20%',
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  midColumn: {
+    width: '50%',
+    color: '#333'
+  },
+  rightColumn: {
+    width: '30%',
+    textAlign: "right"
   }
 });
 
@@ -37,21 +55,51 @@ class ConstructorListScreen extends React.Component {
       .then((response) => {
         const races = response.MRData.ConstructorTable.Constructors;
         this.setState({ loading: false, data: races });
-        console.log(response);
+        //console.log(response);
       })
       .catch(err => console.log(err));
 
-    return this.props.navigation.state.season || "Oi!";
+    //return this.props.navigation.state.season || "Oi!";
   }
+  renderConstructor(){
+    let result = [];
+    if (this.state.data.length){
+        this.state.data.forEach(element => {
+          result.push(
+            <ListItem button={true} onPress={() => { this.handleClick(element) }}>
+              <Body>                
+                <Text style={ style.leftColumn  }>{element.name}</Text>
+                <Text style={ style.midColumn }>{element.nationality}</Text>
+              </Body>
+            </ListItem>
+          )
+        });
+      return result;
+    }
+    return null;
+  }
+  
+  renderLoading(){
+      return  <View style={ style.container }>
+                  <Loading show={ this.state.loading } color="blue" />
+              </View>
+    }
+  
     render() {
+      const results = this.renderConstructor();
       return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>Constructor List</Text>
-          <Button
-          title="Go to Constructor"
-          onPress={() => this.props.navigation.push('Detail')}
-        />
-        </View>
+          (results && results.length)? 
+            <ScrollView>
+              <Text style={ style.title }>
+                Lista de Construtores da Temporada {this.state.season}
+              </Text>
+              <List>{results}</List>
+
+              <Button
+              title="Go to Detail"
+              onPress={() => this.props.navigation.push('Detail')} />
+            </ScrollView>
+          :this.renderLoading()
       );
     }
   }

@@ -36,7 +36,7 @@ class RacerListScreen extends React.Component {
       .then((response) => {
         const races = response.MRData.DriverTable.Drivers;
         this.setState({ loading: false, data: races });
-        console.log(response);
+        //console.log(response);
       })
       .catch(err => console.log(err));
 
@@ -74,10 +74,21 @@ class RacerListScreen extends React.Component {
   render() {
     const results = this.renderDrivers();
     return (
-      (results && results.length) ? <ScrollView><List>{results}</List></ScrollView> :
-        this.renderLoading()
+      (results && results.length)? 
+      <ScrollView>
+        <Text style={ style.title }>
+          Lista de Pilotos da Temporada {this.state.season}
+        </Text>
+        <List>{results}</List>
+
+        <Button
+        title="Go to Detail"
+        onPress={() => this.props.navigation.push('Detail')} />
+      </ScrollView>
+      :this.renderLoading()
     );
   }
 }
 
-export default withNavigation(RacerListScreen)
+
+export default withNavigation(DriverListScreen)
