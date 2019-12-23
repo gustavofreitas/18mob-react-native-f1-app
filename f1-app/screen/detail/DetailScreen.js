@@ -1,11 +1,19 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import Driver from './components/driver';
 import Race from './components/race';
 import Constructor from './components/constructor';
 
-class DetailsScreen extends React.Component {
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 26,
+    textAlign: "center",
+    margin: 10
+  }
+}); 
+
+class DetailsScreen extends Component {
 
   state = {
     driver: {},
@@ -26,13 +34,12 @@ class DetailsScreen extends React.Component {
   }
     render() {
       return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>Details Screen</Text>
+        <View>
+          <Text style={ styles.title }>Detalhes</Text>
           <Driver driver={this.state.driver} />
           <Race race={this.state.race} />
           <Constructor constructor={this.state.constructor} />
-        </View>
-        
+        </View>  
       );
     }
   }
