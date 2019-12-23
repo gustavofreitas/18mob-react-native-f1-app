@@ -10,7 +10,7 @@ const Driver = (props) => {
             return (
                 <View>
                     <Text>{`Nome: ${driver.givenName} ${driver.familyName}` }</Text>
-                    <Text>{`Data de  ascimento: ${driver.dateOfBirth}`}</Text>
+                    <Text>{`Data de Nascimento: ${driver.dateOfBirth}`}</Text>
                     <Text>{`Nacionalidade: ${driver.nationality}`}</Text>
                 </View>
             );
