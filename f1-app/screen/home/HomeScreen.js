@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, View, Text, ScrollView, StyleSheet } from 'react-native';
 import { withNavigation } from 'react-navigation';
+import fonts from '../../fonts';
+(fonts());
 
 import Seasons from './components/seasons';
 

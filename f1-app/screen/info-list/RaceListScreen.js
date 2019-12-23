@@ -3,6 +3,8 @@ import { View, StyleSheet, ScrollView, Text, Button } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { List, ListItem } from 'native-base';
 import Loading from '../../components/Loading';
+import fonts from '../../fonts';
+(fonts());
 
 const style = StyleSheet.create({
   container: {
